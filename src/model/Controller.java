@@ -1,11 +1,19 @@
 package model;
 
+import java.util.ArrayList;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.time.LocalTime;
+
 public class Controller {
 
     private HashTable<String, Passenger> hashTable;
+    private PriotiyQueueIngress<Passenger> arrival_queue_firts_class;
+    private Queue<Passenger> arrival_queue_economic_class;
 
     public Controller() {
-
+        arrival_queue_economic_class = new Queue<>();
+        arrival_queue_firts_class = new PriotiyQueueIngress<>();
     }
 
     public void LoadPassenger(String txt, int count) {
@@ -46,7 +54,7 @@ public class Controller {
                     
                     p.setTime(LocalTime.now());
                   if(p.getTime().isBefore(plane.getTime())){
-                        //premiar de alguna manera a estos manes
+                    System.out.println("se gano un descuento del 10% para su proximo vuelo");
                   }
                     if (p.isFirst_class()) {
                         arrival_queue_firts_class.insert(p);
