@@ -14,6 +14,7 @@ public class Main {
 
     public static void main(String[] args) {
         Main objMain = new Main();
+    
 
         objMain.readTxt();
 
@@ -47,6 +48,14 @@ public class Main {
         controller.LoadPassenger(direction, amount);
 
     }
+
+    public void Register(){
+        System.out.println("ingrese lista de llegada ");
+        String txt= lector.next();
+        controller.ArriveP(txt);
+    }
+
+
 
     
 
