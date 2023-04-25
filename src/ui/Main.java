@@ -14,6 +14,9 @@ public class Main {
 
     public static void main(String[] args) {
         Main objMain = new Main();
+
+        objMain.readTxt();
+
         while (true) {
             System.out.println("Menu:");
             System.out.println("1. Ingresar llegada");
@@ -35,5 +38,16 @@ public class Main {
             }
         }
     }
+
+    public void readTxt(){
+        System.out.println("ingrese la direccion de un archivo txt donde cargaremos y guardaremos los datos.");
+        String direction = lector.next();
+        System.out.println("ingrese el numero de pasajeros.");
+        int amount = lector.nextInt();
+        controller.LoadPassenger(direction, amount);
+
+    }
+
+    
 
 }
