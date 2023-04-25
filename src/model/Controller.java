@@ -90,6 +90,21 @@ public class Controller {
         
     }
 
+    
+    public boolean IngressEmpty(){
+        if(arrival_queue_economic_class.isEmpty()&&arrival_queue_firts_class.isEmpty()){
+            return true;
+        }
+        else{
+            return false;
+        }
+        
+    }
+
+    public boolean HashEmpty(){
+        return hashTable.isEmpty();
+     }
+
 
 }
 

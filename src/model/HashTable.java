@@ -94,4 +94,14 @@ public class HashTable<K extends Comparable<K>, V> {
         this.list = list;
     }
 
+    
+    public boolean isEmpty() {
+        for (int i = 0; i < length; i++) {
+            if (list[i] != null) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }

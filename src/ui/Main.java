@@ -40,19 +40,55 @@ public class Main {
         }
     }
 
-    public void readTxt(){
-        System.out.println("ingrese la direccion de un archivo txt donde cargaremos y guardaremos los datos.");
-        String direction = lector.next();
-        System.out.println("ingrese el numero de pasajeros.");
-        int amount = lector.nextInt();
-        controller.LoadPassenger(direction, amount);
+    public void readTxt() {
+        boolean x = true;
+        while (x) {
+            System.out.println("ingrese la direccion de un archivo txt donde cargaremos y guardaremos los datos.");
+            String direction = lector.next();
+            System.out.println("ingrese el numero de pasajeros.");
+            int amount = lector.nextInt();
+            controller.LoadPassenger(direction, amount);
+            if (!controller.HashEmpty()) {
+                x = false;
+            } else {
+                System.out.println("debes ingresar una lista con por lo menos un pasajero");
+            }
+
+        }
 
     }
 
-    public void Register(){
+    public void Register() {
+        boolean x = true;
+        while (x) {
+            System.out.println("ingrese lista de llegada ");
+            String txt = lector.next();
+            controller.ArriveP(txt);
+            if (!controller.IngressEmpty()) {
+                x = false;
+            } else {
+                System.out.println("debes ingresar por lo menos un pasajero");
+            }
+        }
+
         System.out.println("ingrese lista de llegada ");
-        String txt= lector.next();
+        String txt = lector.next();
         controller.ArriveP(txt);
+    }
+
+    public void timePlane() {
+        System.out.println("ingrese el numero de el avion");
+        int number = lector.nextInt();
+        System.out.print("Ingresa la hora de ingreso del avion (HH:mm): ");
+        String time = lector.next();
+        System.out.println("ingrese el numero de sillas");
+        int number_seats = lector.nextInt();
+        controller.createPlane(number, time, number_seats);
+
+    }
+
+    public void printIngress() {
+        controller.showOrderIngress();
     }
 
 
