@@ -78,6 +78,18 @@ public class Controller {
 
     }
 
+    public void showOrderIngress() {
+        arrival_queue_firts_class.print();
+        arrival_queue_economic_class.print();
+    }
+
+    public void createPlane(int number,String time,int seats){
+        LocalTime horaIngreso = LocalTime.parse(time);
+
+        this.plane= new Plane(number, horaIngreso, seats);
+        
+    }
+
 
 }
 
