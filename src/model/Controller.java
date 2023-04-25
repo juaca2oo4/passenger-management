@@ -17,10 +17,10 @@ public class Controller {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(" ");
-                Passenger p = new Passenger(parts[0], Boolean.parseBoolean(parts[1]), Integer.parseInt(parts[2]),
-                        Integer.parseInt(parts[3]));
+                Passenger p = new Passenger(parts[0],parts[1], Boolean.parseBoolean(parts[2]), Integer.parseInt(parts[3]),
+                        Integer.parseInt(parts[4]),Integer.parseInt(parts[5]));
 
-                hashTable.insert(parts[0], p);
+                hashTable.insert(parts[5], p);
             }
             fis.close();
         } catch (FileNotFoundException e) {
