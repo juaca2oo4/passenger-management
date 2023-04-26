@@ -10,6 +10,7 @@ public class Controller {
     private HashTable<String, Passenger> hashTable;
     private PriotiyQueueIngress<Passenger> arrival_queue_firts_class;
     private Queue<Passenger> arrival_queue_economic_class;
+    private Plane plane;
 
     public Controller() {
         arrival_queue_economic_class = new Queue<>();

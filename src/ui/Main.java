@@ -39,7 +39,8 @@ public class Main {
             }
         }
     }
-
+    // C:\\Users\\shern\\OneDrive\\Documentos\\clases\\Semestre3\\discretas\\passenger-management\\src\\prueba.txt
+    // C:\\Users\\shern\\OneDrive\\Documentos\\clases\\Semestre3\\discretas\\passenger-management\\src\\orden_de_llegada.txt
     public void readTxt() {
         boolean x = true;
         while (x) {
