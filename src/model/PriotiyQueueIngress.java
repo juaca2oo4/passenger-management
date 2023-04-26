@@ -70,7 +70,7 @@ public class PriotiyQueueIngress<T extends Comparable<T>> {
 
     public void print() {
         for (T item : heap) {
-            System.out.print(item + " ");
+            System.out.println(item + " ");
         }
         System.out.println();
     }

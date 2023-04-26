@@ -17,7 +17,7 @@ public class Main {
     
 
         objMain.readTxt();
-
+        objMain.timePlane();
         while (true) {
             System.out.println("Menu:");
             System.out.println("1. Ingresar llegada");
@@ -33,7 +33,6 @@ public class Main {
                 break;
             } else if (option == 2) {
                 objMain.printIngress();
-                break;
             } else {
                 System.out.println("Opción inválida, por favor ingrese 1 o 2.");
             }
@@ -50,7 +49,7 @@ public class Main {
             int amount = lector.nextInt();
             controller.LoadPassenger(direction, amount);
             if (!controller.HashEmpty()) {
-                x = false;
+                break;
             } else {
                 System.out.println("debes ingresar una lista con por lo menos un pasajero");
             }
@@ -65,16 +64,13 @@ public class Main {
             System.out.println("ingrese lista de llegada ");
             String txt = lector.next();
             controller.ArriveP(txt);
-            if (!controller.IngressEmpty()) {
-                x = false;
-            } else {
+            if (controller.IngressEmpty()) {
                 System.out.println("debes ingresar por lo menos un pasajero");
+            } else {
+                x = false;
             }
         }
 
-        System.out.println("ingrese lista de llegada ");
-        String txt = lector.next();
-        controller.ArriveP(txt);
     }
 
     public void timePlane() {

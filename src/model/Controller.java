@@ -52,10 +52,10 @@ public class Controller {
                 Passenger p = hashTable.get(parts[0]);
                 if (p != null) {
                     p.toString();
-                    
-                    p.setTime(LocalTime.now());
+                    LocalTime horaIngreso = LocalTime.parse(parts[1]);
+                    p.setTime(horaIngreso);
                   if(p.getTime().isBefore(plane.getTime())){
-                    System.out.println("se gano un descuento del 10% para su proximo vuelo");
+                    System.out.println(p.getName() +" se gano un descuento del 10% para su proximo vuelo");
                   }
                     if (p.isFirst_class()) {
                         arrival_queue_firts_class.insert(p);
@@ -80,7 +80,9 @@ public class Controller {
     }
 
     public void showOrderIngress() {
+        System.out.println("primera clase");
         arrival_queue_firts_class.print();
+        System.out.println("clase economica");
         arrival_queue_economic_class.print();
     }
 

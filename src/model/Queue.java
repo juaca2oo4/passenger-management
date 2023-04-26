@@ -33,9 +33,8 @@ public class Queue<T> {
     }
 
     public void print() {
-        System.out.print("Orden de llegada es");
         for (T data : queue) {
-            System.out.print(data + " 2");
+            System.out.println(data);
         }
         System.out.println();
     }
