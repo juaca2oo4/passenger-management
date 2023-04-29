@@ -74,4 +74,12 @@ public class PriotiyQueueIngress<T extends Comparable<T>> {
         }
         System.out.println();
     }
+
+    public String printMSg() {
+        String msg = "";
+        for (T data : heap) {
+            msg += data;
+        }
+        return msg;
+    }
 }

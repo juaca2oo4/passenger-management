@@ -38,4 +38,12 @@ public class Queue<T> {
         }
         System.out.println();
     }
+
+    public String printMSg(){
+        String msg="";
+        for (T data : queue) {
+            msg+=data;
+        }
+        return msg;
+    }
 }
