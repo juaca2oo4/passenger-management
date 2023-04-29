@@ -1,4 +1,4 @@
-Santiago Hernandez false 6 100 11053622
+Santiago Hernandez false 2 100 11053622
 valeria Ortiz true 10 50 12345678
 mike viertel false 4 120 69876543
 pipe bueno true 22 897 39876543

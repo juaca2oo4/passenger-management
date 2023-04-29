@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 public class HashTable<K extends Comparable<K>, V> {
 
     private NodeHash<K, V>[] list;
@@ -102,6 +104,20 @@ public class HashTable<K extends Comparable<K>, V> {
             }
         }
         return true;
+    }
+
+    public ArrayList<V> toArrayList() {
+        ArrayList<V> arrayList = new ArrayList<>();
+        for (int i = 0; i < length; i++) {
+            if (list[i] != null) {
+                NodeHash<K, V> node = list[i];
+                while (node != null) {
+                    arrayList.add(node.getValue());
+                    node = node.getNext();
+                }
+            }
+        }
+        return arrayList;
     }
 
 }
