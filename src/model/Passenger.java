@@ -2,7 +2,7 @@ package model;
 
 import java.time.LocalTime;
 
-public class Passenger implements Comparable<Passenger> {
+public class Passenger implements ComparatorPas<Passenger> {
 
     private String name;
 
@@ -12,11 +12,15 @@ public class Passenger implements Comparable<Passenger> {
 
     private int asiento;
 
+    private Seat seat;
+
     private int miles;
 
     private LocalTime time;
 
     private int id;
+
+    private int dis;
 
 
 
@@ -64,6 +68,8 @@ public class Passenger implements Comparable<Passenger> {
     }
 
     // comparision order: nombre, edad, ciudad
+    @Override
+
     public int compareTo(Passenger otro) {
         int valu = Integer.compare(this.miles, otro.getMiles());
         if (valu == 0) {
@@ -109,6 +115,45 @@ public class Passenger implements Comparable<Passenger> {
         this.id = id;
     }
 
-    
+    public Seat getSeat() {
+        return seat;
+    }
+
+    public void setSeat(Seat seat) {
+        this.seat = seat;
+    }
+
+
+@Override
+public int compare(Passenger otro) {
+       int valu = Integer.compare(this.dis, otro.getDis());
+        if(valu==1){
+            return -1;
+        }else if(valu==-1){
+            return 1;
+        }
+        if(valu==0){
+           valu= Integer.compare(this.time.toSecondOfDay(), otro.getTime().toSecondOfDay());
+        }
+        return valu;
+
+    }
+
+public int getDis() {
+    return dis;
+}
+
+public void setDis(int dis) {
+    this.dis = dis;
+}
+
+public int row(){
+    return seat.getRow();
+}
+
+
+
+
+
 
 }
