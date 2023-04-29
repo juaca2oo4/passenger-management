@@ -67,18 +67,18 @@ public class PriotiyQueueOut<T extends ComparatorPas<T>> {
         heap.set(j, temp);
     }
 
-    public void print() {
-        for (T item : heap) {
-            System.out.println(item + " ");
-        }
-        System.out.println();
+  public void print() {
+    for (T item : heap) {
+        System.out.println(item + " ");
     }
+    System.out.println();
+}
 
-    public String printMSg() {
-        String msg = "";
-        for (T data : heap) {
-            msg += data;
-        }
-        return msg;
+public String printMSg() {
+    String msg = "";
+    for (T data : heap) {
+        msg += data;
     }
+    return msg;
+}
 }
