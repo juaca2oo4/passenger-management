@@ -17,14 +17,15 @@ public class Main {
     
 
         objMain.readTxt();
-        objMain.timePlane();
         while (true) {
             System.out.println("Menu:");
             System.out.println("1. Ingresar llegada");
             System.out.println("2. Mostrar orden de ingreso");
+            System.out.println("3. Mostrar orden de salida");
             System.out.println("0. Salir");
             System.out.print("Ingrese una opción: ");
             int option = lector.nextInt();
+
 
             if (option == 1) {
                 objMain.Register();
@@ -33,13 +34,15 @@ public class Main {
                 break;
             } else if (option == 2) {
                 objMain.printIngress();
-            } else {
+            } else if (option == 3) {
+                objMain.out();
+            }else {
                 System.out.println("Opción inválida, por favor ingrese 1 o 2.");
             }
         }
     }
-    // C:\\Users\\shern\\OneDrive\\Documentos\\clases\\Semestre3\\discretas\\passenger-management\\src\\prueba.txt
-    // C:\\Users\\shern\\OneDrive\\Documentos\\clases\\Semestre3\\discretas\\passenger-management\\src\\orden_de_llegada.txt
+    // C:\\Users\\shern\\OneDrive\\Documentos\\discretas2\\TI1final\\passenger-management\\src\\prueba.txt
+    // C:\\Users\\shern\\OneDrive\\Documentos\\discretas2\\TI1final\\passenger-management\\src\\orden_de_llegada.txt
     public void readTxt() {
         boolean x = true;
         while (x) {
@@ -73,19 +76,14 @@ public class Main {
 
     }
 
-    public void timePlane() {
-        System.out.println("ingrese el numero de el avion");
-        int number = lector.nextInt();
-        System.out.print("Ingresa la hora de ingreso del avion (HH:mm): ");
-        String time = lector.next();
-        System.out.println("ingrese el numero de sillas");
-        int number_seats = lector.nextInt();
-        controller.createPlane(number, time, number_seats);
 
-    }
 
     public void printIngress() {
         controller.showOrderIngress();
+    }
+
+    public void out(){
+        controller.Out();
     }
 
 

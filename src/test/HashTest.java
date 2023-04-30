@@ -32,34 +32,6 @@ public class HashTest {
         return hashtable;
     }
 
-    public HashTable<String, Passenger> setUpScenario3(){ //Remove
-        HashTable<String, Passenger> hashtable = new HashTable<>(3);
-        Passenger p1 = new Passenger("Alice", "Smith", true, 1, 1000, 13475098);
-        Passenger p2 = new Passenger("Bob", "Johnson", false, 2, 2000, 22094628);
-        Passenger p3 = new Passenger("Cole", "Min", true, 9, 1000,11099205);
-
-        hashtable.insert(p1.getName(), p1);
-        hashtable.insert(p2.getName(), p2);
-        hashtable.insert(p3.getName(), p3);
-
-        hashtable.remove("Bob");
-        return hashtable;
-    }
-
-    public HashTable<String, Passenger> setUpScenario4() { //isEmpty
-        HashTable<String, Passenger> hashtable = new HashTable<>(3);
-        Passenger p1 = new Passenger("Alice", "Smith", true, 1, 1000, 13475098);
-        Passenger p2 = new Passenger("Bob", "Johnson", false, 2, 2000, 22094628);
-        Passenger p3 = new Passenger("Cole", "Min", true, 9, 1000, 11099205);
-
-        hashtable.insert(p1.getName(), p1);
-        hashtable.insert(p2.getName(), p2);
-        hashtable.insert(p3.getName(), p3);
-
-        String expectedOutput = "name=Alice, name=Bob, name=Cole";
-        String actualOutput = hashtable.print();
-        return hashtable;
-    }
     @Test
     void testInsert1(){
         HashTable<String, Passenger> h= setUpScenario1();
@@ -69,12 +41,12 @@ public class HashTest {
     }
     @Test
     void testInsert2(){
-        HashTable<String, Passenger> h= setUpScenario2(); //No funcionaría porque hacen falta nombres
+        HashTable<String, Passenger> h= setUpScenario2(); 
         Passenger p1 = new Passenger("Cole","Min",true,9,1000,11099205);
         h.insert(p1.getName(), p1);
         Passenger p2 = new Passenger("Dani","Ramirez",true,7,1111,99999999);
         h.insert(p2.getName(), p2);
-        assertEquals("name=Cole,  name=Valeria,  name=pipe,  name=Dani, ",h.print());
+        assertEquals("name=Cole, name=Danielle, name=Valeria, name=pipe, name=Dani, ",h.print());
     }
     @Test
     void testInsert3() {
@@ -90,7 +62,6 @@ public class HashTest {
     public void testRemove3() {
         HashTable<String, Passenger> h = setUpScenario2();
         h.remove("Danielle");
-        Passenger removedPassenger = h.get("Danielle");
         assertEquals("name=Valeria, name=pipe, ", h.print());
     }
     @Test
@@ -99,13 +70,14 @@ public class HashTest {
         h.remove("Cole");
         h.remove("pipe");
         h.remove("Danielle");
-        assertEquals("name=Valeria, ", h.print());
+        h.remove("Valeria");
+        assertEquals("", h.print());
     }
     @Test
     void testRemove1() {
-        HashTable<String, Passenger> h = setUpScenario2();
+        HashTable<String, Passenger> h = setUpScenario1();
         h.remove("Valeria");
-        assertEquals("name=Danielle, name=pipe, ",h.print() );
+        assertEquals("",h.print() );
     }
 
 }
