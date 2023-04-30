@@ -151,9 +151,4 @@ public int row(){
     return seat.getRow();
 }
 
-
-
-
-
-
 }
