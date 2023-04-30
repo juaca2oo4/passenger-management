@@ -1,0 +1,7 @@
+Santiago Hernandez false 2 100 11053622
+Valeria Ortiz true 10 50 12345678
+Mike Viertel false 4 120 69876543
+pipe bueno true 22 897 39876543
+Sergio Florez false 15 1000 65432178
+Danielle marsh true 7 1111 99999999
+Yoongi Min true 11 999 11111111
