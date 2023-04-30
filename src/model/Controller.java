@@ -29,8 +29,9 @@ public class Controller {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(" ");
-                Passenger p = new Passenger(parts[0],parts[1], Boolean.parseBoolean(parts[2]), Integer.parseInt(parts[3]),
-                        Integer.parseInt(parts[4]),Integer.parseInt(parts[5]));
+                Passenger p = new Passenger(parts[0], parts[1], Boolean.parseBoolean(parts[2]),
+                        Integer.parseInt(parts[3]),
+                        Integer.parseInt(parts[4]), Integer.parseInt(parts[5]));
 
                 int fila = (Integer.parseInt(parts[3]) - 1) / plane.getColumn() + 1;
                 int columna = (Integer.parseInt(parts[3]) - 1) % plane.getColumn() + 1;
