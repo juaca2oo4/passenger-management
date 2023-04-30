@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
-public class PriotiyQueueIngress<T extends Comparable<T>> {
+public class PriotiyQueueIngress<T extends ComparatorPas<T>> {
 
     private ArrayList<T> heap;
 
